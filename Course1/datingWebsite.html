@@ -5,12 +5,20 @@
 <header>
   <title>Dating Website</title>
   <style>
+    fieldset {background: lightyellow; border: 10px solid yellow; margin-bottom: 10px; width: 720px}
+    label {width: 180px; display: inline-block; text-align: right; vertical-align: top}
+    /*label checkbox {width: auto}
+    label radio {width: auto}*/
+    span.rangeEnd {text-align: center}
+    span.boxradiolabel {width: auto}
+    textarea {width: 360px; height: 50px}
 
   </style>
 </header>
 
 
 <body>
+
 
   <h1> Please Enter Your Details For Our Dating Website! </h1>
 
@@ -27,9 +35,9 @@
     <legend>Your General Details</legend>
 
     <label for = "name"> Name: </label> <input type = "text" name = "name" required><br>
-    <label for= "gender"> Gender: </label> <input type="radio" name = "gender" value = "male" required> Male
-                                          <input type = "radio" name = "gender" value = "female"> Female <br>
-    <label for= "age"> Age: </label> <input type = "number" name = "age" value = "18" required><br>
+    <label for= "gender"> Gender: </label> <input type="radio" name = "gender" value = "male" required> <span class= "boxradiolabel"> Male </span>
+                                          <input type = "radio" name = "gender" value = "female"> <span class= "boxradiolabel"> Female </span> <br>
+    <label for= "age"> Age: </label> <input type = "number" name = "age" required><br>
     <label for = "date of birth"> Date of Birth: </label> <input type = "date" name = "date of birth"><br>
     <label for = "favorite color"> Favorite Color: </label> <input type = "color" name = "favorite color"><br>
     <label for = "country"> Which Country: </label> <select name = "country">
@@ -46,8 +54,8 @@
     <legend> Your Indicators </legend>
 
     <label for = "height"> Height: </label>
-    Short <input type = "range" min = "0" max = "100" value = "50" name = "height"> Tall<br>
-    <label for = "salary"> Salary: </label> Poor <input type = "range" min = "0" max = "100" value = "50" name = "salary"> Rich <br>
+    <span class="rangeEnd"> Short</span> <input type = "range" min = "0" max = "100" value = "50" name = "height"> <span class ="rangeEnd">Tall</span> <br>
+    <label for = "salary"> Salary: </label> <span class="rangeEnd">Poor</span><input type = "range" min = "0" max = "100" value = "50" name = "salary"> <span class= "rangeEnd">Rich </span><br>
   </fieldset><br>
 
   <fieldset>
@@ -55,11 +63,11 @@
     <legend> Your Contact Information </legend>
     <label for = "email"> Email: </label> <input type = "email" name = "email" required><br>
     <label for = "telephone number ">Mobile: </label> <input type = "tel" name = "telephone number"><br>
-    <label for = "address"> Address: <textarea rows = "2" cols = "40" name = "address"></textarea><br>
+    <label for = "address"> Address: </label> <textarea rows = "2" cols = "40" name = "address"></textarea><br>
 
-    <label for = "contact method"> Method to contact you: </label> <input type = "checkbox" name = "methods" value = "email"> Email
-    <input type = "checkbox" name = "methods" value = "whatsapp"> Whatsapp
-    <input type = "checkbox" name = "methods" value = "chat"> In-app chat<br>
+    <label for = "contact method"> Method to contact you: </label> <input type = "checkbox" name = "methods" value = "email"> <span class= "boxradiolabel"> Email </span>
+    <input type = "checkbox" name = "methods" value = "whatsapp"> <span class= "boxradiolabel"> Whatsapp </span>
+    <input type = "checkbox" name = "methods" value = "chat"> <span class= "boxradiolabel">In-app chat </span><br>
 
   </fieldset>
 
