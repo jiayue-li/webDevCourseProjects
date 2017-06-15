@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+
+<header>
+  <title>Dating Website</title>
+  <style>
+
+  </style>
+</header>
+
+
+<body>
+
+  <h1> Please Enter Your Details For Our Dating Website! </h1>
+
+  <form action = "TODO" method = "get" enctype= "TODO">
+  <fieldset>
+    <legend>Your Face</legend>
+
+    <label for = "profileImage">Your image:</label>
+    <input type="file" required><br>
+    <label for = "preview"> Image Preview: <img id = "preview"/>
+  </fieldset><br>
+
+  <fieldset>
+    <legend>Your General Details</legend>
+
+    <label for = "name"> Name: </label> <input type = "text" name = "name" required><br>
+    <label for= "gender"> Gender: </label> <input type="radio" name = "gender" value = "male" required> Male
+                                          <input type = "radio" name = "gender" value = "female"> Female <br>
+    <label for= "age"> Age: </label> <input type = "number" name = "age" value = "18" required><br>
+    <label for = "date of birth"> Date of Birth: </label> <input type = "date" name = "date of birth"><br>
+    <label for = "favorite color"> Favorite Color: </label> <input type = "color" name = "favorite color"><br>
+    <label for = "country"> Which Country: </label> <select name = "country">
+      <option value = "none">  </option>
+      <option value = "US"> United States </option>
+      <option value = "canada"> Canada </option>
+      <option value = "mex"> Mexico </option>
+      <option value = "ch"> China </option>
+      <option value = "in"> India </option>
+    </select>
+  </fieldset><br>
+
+  <fieldset>
+    <legend> Your Indicators </legend>
+
+    <label for = "height"> Height: </label>
+    Short <input type = "range" min = "0" max = "100" value = "50" name = "height"> Tall<br>
+    <label for = "salary"> Salary: </label> Poor <input type = "range" min = "0" max = "100" value = "50" name = "salary"> Rich <br>
+  </fieldset><br>
+
+  <fieldset>
+
+    <legend> Your Contact Information </legend>
+    <label for = "email"> Email: </label> <input type = "email" name = "email" required><br>
+    <label for = "telephone number ">Mobile: </label> <input type = "tel" name = "telephone number"><br>
+    <label for = "address"> Address: <textarea rows = "2" cols = "40" name = "address"></textarea><br>
+
+    <label for = "contact method"> Method to contact you: </label> <input type = "checkbox" name = "methods" value = "email"> Email
+    <input type = "checkbox" name = "methods" value = "whatsapp"> Whatsapp
+    <input type = "checkbox" name = "methods" value = "chat"> In-app chat<br>
+
+  </fieldset>
+
+  <input type = "submit" value = "Submit">
+
+</form>
+
+</body>
+
+
+</html>
