@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Week 1 Course 1 Notes</title>
+    <meta name = "author " content = "jaj">
+    <link href = "/Users/jiayueli/Documents/Projects/Full Stack Web Dev Course/Course1/Week1/week1NotesStyle.css" rel = "stylesheet" type = "text/css"/>
+    <style>
+      p{color: white}
+      #blue {background: blue}
+      .formats {color: blue; background: yellow}
+      .wow {background: grey}
+      ul li {color: orange}
+      a:link {color: blue} /*pseudoclass for a link*/
+      a:visited {color: purple} /*pseudoclass for a visited link*/
+      a:active {color:purple} /*pseudoclass for a link being followed*/
+      p: empty {background: : red} /*pseudoclass for an empty element*/
+      table, td, th {border: 9px black; padding: 15px}
+    </style>
+  </head>
+  <body>
+
+    <section>
+      <h2> Hello </h2>
+      <ul id = "myName">
+        <li id = "blue">My name</li>
+        <li>Is</li>
+        <li>jaj</li>
+        <li></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Birthday</h2>
+      <!-- We can change this to lettering ordering using <ol type = "A"> instead -->
+      <ol start = "1998" reversed="">
+        <li class = "formats wow"><strong>This</strong></li>
+        <li class = "formats"><u>is</u></li>
+        <li class = "formats">the <big><em>year</em></big></li>
+        <liclass = "formats">I was <i>born</i></li>
+      <ol>
+
+      <p>Here, i can go to another part of the page using this <a href = "#here">link</a> </p>
+    </section>
+
+    <section>
+      <h2> Formatting HTML Text </h2>
+      <ul>
+        <li style = "color: red"> <i>italics</i> </li>
+        <li> <em>emphasis</i> </li>
+        <li> <b>bold</b> </li>
+        <li> <strong>strong</strong> </li>
+        <li> <u>underline</u> </li>
+        <li> <big>big</big> </li>
+        <li> <small>small</small> </li>
+        <li> <mark>mark</mark> </li>
+        <li> x<sub>sub</sub> </li>
+        <li> x<sup>sup</sup> </li>
+        <li> <ins> ins </ins> </li>
+        <li> <del> del </del> </li>
+      </ul>
+    </section>
+
+    <section id = "here">
+      <h2> Multimedia </h2>
+      <h3> Images </h3>
+      <img src = "https://68.media.tumblr.com/063773f05bad098ec37a4a96c55287d6/tumblr_ofwzi0dJrz1v17v83o1_500.jpg" width = "100%" height = "100%"/>
+
+      <h3> Audio </h3>
+      <audio src="sound_file.mp3" controls>
+        <p>Sorry, your browser can't handle this audio </p>
+      </audio>
+      <audio src="sound_file.mp3" playback loop>
+      </audio>
+
+      <h3> Video </h3>
+      <video src= "https://youtu.be/zKIIf6W16Uk" controls="" alt = "Rami Malek Goes to The Ice Cream Museum" loop >
+        <p> Message to older browsers that this video doesnt work </p>
+      </video>
+
+      <h3> Links </h3>
+      <p>This follows a <a href = "https://gmail.com/">link</a>!</p>
+      <p>This follows a link from a picture: <a href = https://gmail.com/> <img src = "https://lh6.ggpht.com/8-N_qLXgV-eNDQINqTR-Pzu5Y8DuH0Xjz53zoWq_IcBNpcxDL_gK4uS_MvXH00yN6nd4=w300"></p>
+    </section>
+
+    <section>
+      <h2> Strengthening Your Knowledge of HTML <h2>
+      <h3>Void Elements and Breaks</h3>
+      <p>Some sample text is here to <br>demonstrate void elements. This is a break.</p>
+      <p>Some sample text is here to dem<wbr>onstrate void elements. This is an optional break.</p>
+      <p>Some sample text is here to demonstrate <hr> void elements. This is a line.</p>
+
+      <h3> Tables </h3>
+
+      <table>
+        <thead>
+          <tr><th>This is a</th> <th>Table Head</th> </tr>
+        </thead>
+        <tbody>
+          <tr> <td>This is a</td> <td> Table Row </td></tr>
+        </tbody>
+      </table>
+
+    </section>
+
+
+    <section>
+      <h2> Handling Forms </h2>
+      <h3> HTML Form Basics </h3>
+      <form action = "directory destination to send data"
+      method = "post" enctype = "form-data in order to upload a file">
+        <textarea rows = "3" cols = "60" name = "feedback"
+        >Please enter your text here
+        </textarea>
+
+        <label for = "firstnameID"> First name: </label>
+        <input type = "text" id = "firstnameID" name = "firstnameUSEFUL FOR SERVER" placeholder ="Type name here" autofocus required>
+        <br/>
+        <input type = "submit" value = "Send">
+        <br/>
+
+        <input type = "file" name = "fileToUpload">
+        <p>Press this button to upload it:</p>
+        <input type = "submit" value = "Upload File">
+
+        <br/>
+        <input type = "checkbox" value = "check me!" > check <br>
+        <input type = "radio" value = "select me"> select <br>
+        <input type = "password" value = "userpassword"> <br>
+        <select name = "cities">
+          <option value = "sd"> San Diego </option>
+          <option value = "bk"> Berkeley </option>
+          <option value = "sf"> San Francisico </option>
+        </select> 
+
+        <h4> Useful Attributes For Forms </h4>
+        <p>value = "something" fixes what is shown at the start
+          <br/>placeholder = "something" shows useful text which disappears when the user enters something
+          <br/>autofcous sets which field is given focus at the start
+          <br/>required means field is required </p>
+
+        <h4> HTML5 Input Elements <h4>
+        <input type = "number">
+        <input type = "date">
+        <input type = "time">
+        <input type = "color">
+        <input type = "range">
+
+      </form>
+    </section>
+
+    <section>
+      <h3> Element Grouping</h3>
+
+      <form>
+        <fieldset>
+          <legend>Personal Information <legend>
+            First name? <input type = "text" name = "firstName">
+            Last name? <input type "text" name = "lastName">
+        </fieldset> <br>
+
+        <fieldset>
+          <legend>Personal Information <legend>
+            First name? <input type = "text" name = "firstName">
+            Last name? <input type "text" name = "lastName">
+        </fieldset> <br>
+      </form>
+    </section>
+
+
+</html>
