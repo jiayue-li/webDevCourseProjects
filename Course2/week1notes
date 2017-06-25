@@ -1,0 +1,10 @@
+/**Introduction to Bootstrap
+
+Getting started w/Bootstrap
+  bootstrap container class:
+    <div class = "container"> .. </div> //container for all the content of the site
+  bootstrap rows
+    <div class = "row">..</div> //rows act as horizontal grouping for columns
+  jumbotron
+    <div class = "jumbotron"> .. </div>
+*/
