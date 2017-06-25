@@ -8,3 +8,7 @@ Getting started w/Bootstrap
   jumbotron
     <div class = "jumbotron"> .. </div>
 */
+
+/** Icon Bar
+  -lightweight icons and graphics
+  -<i class = "fa fa-phone"></i> //using Font Awesome, bootstrap-social adds special buttons for special media files
