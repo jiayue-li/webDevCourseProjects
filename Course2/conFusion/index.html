@@ -103,6 +103,7 @@
     </div>
 
     <div id="reserveModal" class="modal fade" role="dialog">
+      <div class = "container">
         <div class="modal-dialog">
         <!-- Modal content-->
         <div class="modal-content">
@@ -115,28 +116,91 @@
           </div>
 
           <div class ="modal-body">
-
+            <div class = "row">
             <form class = "form horizontal" role = "form">
-              <div class = "form-group">
-                
-                  <label for = "numGuests">Number of Guests:
-                  </label>
 
-
-                  <input type="radio" value = "1" required>
-                  <span class= "numGuests" style ="padding: 10px;">1</span>
-                  <input type = "radio" value = "2">
-                  <span class= "numGuests" style ="padding: 10px;">2</span>
-
+              <div class = "row row-content" style = "border-bottom: 0px ridge; padding: 0px 0px 20px 0px; min-height:10px;">
+                <div class = "form-group">
+                  <div class = "col-xs-12 col-sm-3 col-sm-offset-1">
+                    <label for = "numGuests">Number of Guests:
+                    </label>
+                  </div>
+                  <div class ="col-xs-12 col-sm-8">
+                    <input type="radio" value = "1" required>
+                    <span class= "numGuests" style ="padding: 10px;">1</span>
+                    <input name = "guests" type = "radio" value = "2">
+                    <span class= "numGuests" style ="padding: 10px;">2</span>
+                    <input name = "guests" type = "radio" value = "3">
+                    <span class= "numGuests" style ="padding: 10px;">3</span>
+                    <input name = "guests" type = "radio" value = "4">
+                    <span class= "numGuests" style ="padding: 10px;">4</span>
+                    <input name = "guests" type = "radio" value = "5">
+                    <span class= "numGuests" style ="padding: 10px;">5</span>
+                  </div>
+                </div>
               </div>
+
+              <div class = "row row-content" style = "border-bottom: 0px ridge; padding: 0px 0px 20px 0px; min-height:10px;">
+                <div class = "col-xs-12 col-sm-3 col-sm-offset-1">
+                  <label for = "smokingSection">Section:
+                  </label>
+                </div>
+                <div class ="col-xs-12 col-sm-8">
+                  <div class = "btn-group" data-toggle="buttons">
+                    <label class="btn btn-primary active">
+                      <input type="radio" name = "smokingSection" id="nonsmoking" autocomplete="on" checked> Non-Smoking
+                    </label>
+                    <label class="btn btn-primary">
+                      <input type="radio" name = "smokingSection" id="smoking" autocomplete="on"> Smoking
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class = "row row-content" style = "border-bottom: 0px ridge; padding: 0px 0px 20px 0px; min-height:10px;">
+                <div class ="form-group has-feedback">
+                  <div class = "col-xs-12 col-sm-3 col-sm-offset-1">
+                    <label for ="DateandTime">Date and Time:</label>
+                  </div>
+                  <div class = "col-xs-12 col-sm-4 DateandTime">
+                    <input type = "date" class = "form-control" placeholder="Date">
+                    <span class = "glyphicon glyphicon-calendar form-control-feedback"></span>
+                  </div>
+                  <div class = "col-xs-12 col-sm-4 DateandTime">
+                    <input type = "time" class = "form-control" placeholder="Time">
+                    <span class = "glyphicon glyphicon-time form-control-feedback"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row row-content" style = "border-bottom: 0px ridge; padding: 0px 0px 20px 0px; min-height:10px;">
+                <div class="form-group">
+                    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+                        <button type="submit" class="btn btn-primary">Reserve</button>
+                        <button type="button" class="btn btn-default btn-sm"
+                               data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+              </div>
+
             </form>
 
+            <div class ="alert alert-warning alert-dismissible" role = "alert">
+                <button type = "button" class = "close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <strong>Warning: </strong>Please
+                <a href = "tel:+85212345678">call</a>
+                us to reserve for more than six guests.
+            </div>
+          </div>
           </div>
 
         </div>
 
-        </div>
+      </div>
     </div>
+  </div>
 
 
     <header class = "jumbotron">
@@ -313,78 +377,6 @@
             </div>
         </div>
 
-        <div class = "row row-content">
-
-          <div class="col-xs-12 col-sm-3">
-            <a id = "reserveform"> <div class = "col-xs-12 col-sm-3">
-            <h3 align = "center">Reserve a Table</h3>
-            </div></a>
-          </div>
-
-          <div class = "col-xs-12 col-sm-9">
-
-            <div class ="alert alert-warning alert-dismissible" role = "alert">
-                <button type = "button" class = "close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                <strong>Warning: </strong>Please
-                <a href = "tel:+85212345678">call</a>
-                us to reserve for more than six guests.
-            </div>
-
-            <form class = "form horizontal" role ="form">
-              <div class = "form-group">
-                  <div class = "col-xs-12 col-sm-4">
-                    <label for="numGuests">Number of Guests</label>
-                  </div>
-                  <div class = "col-xs-12 col-sm-8">
-                    <span class = "numGuests" style = "padding: 10px;">
-                      <input id = "1Guest" type="radio">
-                      <label for = "1Guest" style = "padding: 3px;">1</label>
-                    </span>
-                    <span class = "numGuests" style = "padding: 10px;">
-                      <input id = "2Guest" type="radio">
-                      <label for = "2Guest" style = "padding: 3px;">2</label>
-                    </span>
-                    <span class = "numGuests" style = "padding: 10px;">
-                      <input id = "3Guest" type="radio">
-                      <label for = "3Guest" style = "padding: 3px;">3</label>
-                    </span>
-                    <span class = "numGuests" style = "padding: 10px;">
-                      <input id = "4Guest" type="radio">
-                      <label for = "4Guest" style = "padding: 3px;">4</label>
-                    </span>
-                    <span class = "numGuests" style = "padding: 10px;">
-                      <input id = "5Guest" type="radio">
-                      <label for = "5Guest" style = "padding: 3px;">5</label>
-                    </span>
-                </div>
-              </div>
-
-
-              <div class ="form-group has-feedback">
-                <div class = "col-xs-12 col-sm-4">
-                  <label for ="DateandTime">Date and Time</label>
-                </div>
-                <div class = "col-xs-12 col-sm-4">
-                  <input type = "date" class = "form-control" placeholder="Date">
-                  <span class = "glyphicon glyphicon-calendar form-control-feedback"></span>
-                </div>
-                <div class = "col-xs-12 col-sm-4">
-                  <input type = "time" class = "form-control" placeholder="Time">
-                  <span class = "glyphicon glyphicon-time form-control-feedback"></span>
-                </div>
-              </div>
-
-              <div class="form-group">
-                  <div class="col-xs-12 col-sm-10">
-                      <button type="submit" class="btn btn-primary">Reserve</button>
-                  </div>
-              </div>
-            </form>
-
-          </div>
-        </div>
 
       </div>
 
