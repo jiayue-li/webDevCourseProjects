@@ -1,0 +1,45 @@
+JQuery Syntax
+
+  $(selector).action()
+    -$: defines/accesses JQuery
+    -(selector): queries and finds html elements
+      -any html element, any id, class, attribute, current element: $(this)
+    -action(): action to be performed on the elements
+    -ex: $("p").hide(). $("#mycarousel"),carousel('pause')
+
+  ex: bootstrap jquery example
+  <script>
+    $(document).ready(function(){
+      $('[data-toggle="tooltip"]').tooltip();
+    });
+  </script>
+
+  example: carousel
+    -javascript based control
+    -$('.carousel').carousel();
+      -ex. $('.carousel').carousel({interval:2000});
+    -other controls:
+      -.carousel('cycle')
+      -pause
+      -number
+      -prev
+      -next
+
+Less and Sass: CSS Preprocessors:
+
+  Features: variables, nexting selectors, mixins, functions and expressions
+  Variables:
+    less: use @
+    sass: use $
+
+  Mixins:
+    can hold multiple css declarations unlike variables:
+      Less:
+        .zero-margin{
+          margin: 0px auto;
+          background: @white;
+        }
+        .row-header{
+          .zero-margin;
+          .padding: 0px auto;
+        }
