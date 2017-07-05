@@ -26,19 +26,19 @@
 <body>
 
     <div class="container">
-        <div class="row row-content" ng-controller = "dishDetailController as dishDCtrl">
+        <div class="row row-content" ng-controller = "DishDetailController">
             <div class="col-xs-12">
               <div class="media-left media-middle">
                   <a href="#">
                   <img class="media-object img-thumbnail"
-                   ng-src={{dishDCtrl.dish.image}} alt="Uthappizza">
+                   ng-src={{dish.image}} alt="Uthappizza">
                   </a>
               </div>
               <div class="media-body">
-                  <h2 class="media-heading">{{dishDCtrl.dish.name}}
-                   <span class="label label-danger">{{dishDCtrl.dish.label}}</span>
-                   <span class="badge">{{dishDCtrl.dish.price | currency}}</span></h2>
-                  <p>{{dishDCtrl.dish.description}}</p>
+                  <h2 class="media-heading">{{dish.name}}
+                   <span class="label label-danger">{{dish.label}}</span>
+                   <span class="badge">{{dish.price | currency}}</span></h2>
+                  <p>{{dish.description}}</p>
               </div>
               <p></p>
               <p></p>
@@ -48,9 +48,9 @@
             </div>
             <div class = "col-xs-5">
               <label for = "filterCommentsInput" style="font-weight:normal;">Sort by:</label>
-              <input type = "text" id="filterCommentsInput" ng-model= "dishDCtrl.filtText">
+              <input type = "text" id="filterCommentsInput" ng-model= "filtText">
             </div>
-            <div class="col-xs-9 col-xs-offset-1" ng-repeat="com in dishDCtrl.dish.comments | orderBy: dishDCtrl.filtText">
+            <div class="col-xs-9 col-xs-offset-1" ng-repeat="com in dish.comments | orderBy: filtText">
               <blockquote>
                 <header>{{com.rating}} Stars</header>
                 <p></p>
@@ -58,64 +58,65 @@
                 <footer>{{com.author}}, {{com.date | date}}</footer>
               </blockquote>
             </div>
+            <div class="col-xs-9 col-xs-offset-1" ng-controller="DishCommentController">
+                    <ul class="list-unstyled">
+						<p>Task 3: Here you include the code to show the live preview of the comment</p>
+						<p>The comment should be shown only when the form contains valid
+						information and is not pristine</p>
+                    </ul>
+                <form class="form-horizontal" role="form" name="commentForm"
+                		ng-submit="submitComment()" novalidate>
+                    <div class="form-group"
+g-class="{ 'has-error' : commentForm.name.$error.required }">                        <label for="yourname" class="col-sm-2 control-label">Your Name</label>
+                        <div class="col-sm-10">
+                        <input ng-model="newComment.name" required class="form-control" id="yourname" name="yourname" placeholder="Enter First Name" type="text">
+                        <span ng-show="commentForm.name.$error.required && !commentForm.name.$pristine" class="help-block">Your Name is Required</span>
+                        </div>
+<div>{{commentForm.name.$error.required}}</div>
+                    </div>
+
+
+                  <div class = "form-group">
+                    <label for="numStars" class="col-sm-2 control-label">Number of Stars:</label>
+                    <div class ="col-sm-10">
+                      <input ng-model="newComment.numStars" type="radio" value = "1" required>
+                      <span class= "numStars" style ="padding: 10px;">1</span>
+                      <input ng-model="newComment.numStars" name = "guests" type = "radio" value = "2">
+                      <span class= "numStars" style ="padding: 10px;">2</span>
+                      <input ng-model="newComment.numStars" name = "guests" type = "radio" value = "3">
+                      <span class= "numStars" style ="padding: 10px;">3</span>
+                      <input ng-model="newComment.numStars" name = "guests" type = "radio" value = "4">
+                      <span class= "numStars" style ="padding: 10px;">4</span>
+                      <input ng-model="newComment.numStars" name = "guests" type = "radio" value = "5">
+                      <span class= "numStars" style ="padding: 10px;">5</span>
+                    </div>
+                    <p>{{newComment.numStars}}
+                  </div>
+                  <div class= "form-group">
+                    <label for="yourComments" class ="col-sm-2 control-label">Your Comments:</label>
+                    <div class="col-sm-10">
+                      <textarea ng-model="newComment.comment" class="form-control" id="yourComments" name="yourComments" rows="12"></textarea>
+                    </div>
+                    <p>{{newComment.comment}}</p>
+                  </div>
+                  <div class="form-group">
+                      <div class="col-sm-offset-2 col-sm-10">
+                          <button type="submit" class="btn btn-primary">Send Feedback</button>
+                      </div>
+                  </div>
+
+
+					<p>Task 2: You need to validate that the user name and comments are entered</p>
+                </form>
+            </div>
         </div>
 
     </div>
 
+<!-- build:js scripts/main.js -->
     <script src="../bower_components/angular/angular.min.js"></script>
-    <script>
-
-        var app = angular.module('confusionApp',[]);
-
-        app.controller('dishDetailController', function() {
-            this.filtText = '';
-            var dish={
-                          name:'Uthapizza',
-                          image: 'images/uthapizza.png',
-                          category: 'mains',
-                          label:'Hot',
-                          price:'4.99',
-                          description:'A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.',
-                           comments: [
-                               {
-                                   rating:5,
-                                   comment:"Imagine all the eatables, living in conFusion!",
-                                   author:"John Lemon",
-                                   date:"2012-10-16T17:57:28.556094Z"
-                               },
-                               {
-                                   rating:4,
-                                   comment:"Sends anyone to heaven, I wish I could get my mother-in-law to eat it!",
-                                   author:"Paul McVites",
-                                   date:"2014-09-05T17:57:28.556094Z"
-                               },
-                               {
-                                   rating:3,
-                                   comment:"Eat it, just eat it!",
-                                   author:"Michael Jaikishan",
-                                   date:"2015-02-13T17:57:28.556094Z"
-                               },
-                               {
-                                   rating:4,
-                                   comment:"Ultimate, Reaching for the stars!",
-                                   author:"Ringo Starry",
-                                   date:"2013-12-02T17:57:28.556094Z"
-                               },
-                               {
-                                   rating:2,
-                                   comment:"It's your birthday, we're gonna party!",
-                                   author:"25 Cent",
-                                   date:"2011-12-02T17:57:28.556094Z"
-                               }
-
-                           ]
-                    };
-
-            this.dish = dish;
-
-        });
-
-    </script>
+    <script src="scripts/app.js"></script>
+<!-- endbuild -->
 
 </body>
 
