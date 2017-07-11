@@ -18,7 +18,7 @@
                       </div>
                       <div class="media-body">
                           <h2 class="media-heading">{{dish.name}}
-                            <span class="label label-danger">{{dish.label}}</span> 
+                            <span class="label label-danger">{{dish.label}}</span>
                             <span class="badge">{{dish.price | currency}}</span></h2>
                           <p>{{dish.description}}</p>
                           <p><a ui-sref="app.dishdetails({id: dish.id})" class="btn btn-primary btn-xs" >More &raquo;</a></p>
@@ -34,7 +34,7 @@
                 <h3 align=center>This Month's Promotions</h3>
             </div>
             <div class="col-xs-12 col-sm-9">
-              <div class="media">
+              <div class="media" ng-if = "showPromotion">
                  <div class="media-body">
                      <h2 class="media-heading">{{promotion.name}}<span class = "label label-danger">{{promotion.label}}</span></h2>
                      <p>{{promotion.description}}</p>

@@ -80,8 +80,8 @@ angular.module('confusionApp')
 
           $scope.dish = {};
           $scope.showDish = false;
-           $scope.message="Loading ...";
-                       $scope.dish = menuFactory.getDishes().get({id:parseInt($stateParams.id,10)})
+          $scope.message="Loading ...";
+          $scope.dish = menuFactory.getDishes().get({id:parseInt($stateParams.id,10)})
            .$promise.then(
                            function(response){
                                $scope.dish = response;
@@ -111,8 +111,9 @@ angular.module('confusionApp')
         // implement the IndexController and About Controller here
         .controller('IndexController', ['$scope', 'corporateFactory', 'menuFactory', function($scope, corporateFactory, menuFactory){
           $scope.showDish = false;
-                        $scope.message="Loading ...";
-                        $scope.dish = menuFactory.getDishes().get({id:0})
+          $scope.showPromotion = false;
+          $scope.message="Loading ...";
+          $scope.dish = menuFactory.getDishes().get({id:0})
                         .$promise.then(
                             function(response){
                                 $scope.dish = response;
@@ -122,8 +123,19 @@ angular.module('confusionApp')
                                 $scope.message = "Error: "+response.status + " " + response.statusText;
                             }
                         );
-          $scope.promotion = menuFactory.getPromotion('Weekend Grand Buffet');
+
+          $scope.promotion = menuFactory.getPromotion(0)
+            .$promise.then(
+              function(response){
+                $scope.promotion = response;
+                $scope.showPromotion = true;
+              },
+              function(response){
+                $scope.message = "Error:" + response.status + " " + response.statusText;
+              }
+              );
           $scope.execChef = corporateFactory.getLeader(3);
+
         }])
 
         .controller('AboutController', ['$scope', 'corporateFactory', function($scope, corporateFactory){
